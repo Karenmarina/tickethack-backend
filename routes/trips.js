@@ -3,6 +3,7 @@ const Trip = require("../models/trips");
 
 var express = require("express");
 var router = express.Router();
+const fetch = require("node-fetch");
 
 router.post("/", (req, res) => {
   Trip.find({
@@ -20,7 +21,7 @@ router.post("/", (req, res) => {
       ),
     },
   }).then((data) => {
-    if (this.data) {
+    if (data) {
       res.json({ result: true, allTrips: data });
     } else {
       res.json({ result: false, error: "No trip found" });
