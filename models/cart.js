@@ -3,10 +3,10 @@ const mongoose = require("mongoose");
 const cartSchema = mongoose.Schema({
   departure: String,
   arrival: String,
-  date: { Date },
+  date: Date,
   price: Number,
 });
 
-const Cart = mongoose.model("carts", cartSchema);
+const Cart = mongoose.model("cart", cartSchema);
 
 module.exports = Cart;
